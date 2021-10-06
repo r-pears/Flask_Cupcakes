@@ -1,5 +1,5 @@
 """Models for Cupcake app."""
-from flask_sqlalchemy import flask_sqlalchemy
+from flask_sqlalchemy import SQLAlchemy
 
 db = SQLAlchemy()
 
@@ -22,7 +22,7 @@ class Cupcake (db.Model):
     rating = db.Column(db.Float, nullable=False)
     image = db.Column(db.Text, nullable=False, default=DEFAULT_IMAGE)
 
-    def cupcake_to_dict(self):
+    def to_dict(self):
         """Serialize cupcake to a dict of cupcake information."""
 
         return {
